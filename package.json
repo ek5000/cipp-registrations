@@ -2,14 +2,20 @@
   "name": "cipp-registrations",
   "version": "1.0.0",
   "description": "Download CIPP registration for usa rugby clubs",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
+    "build": "babel src --out-dir lib",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ekongi Yancy",
   "license": "MIT",
   "dependencies": {
     "googleapis": "^21.3.0",
+    "puppeteer": "^0.10.2",
     "q": "^1.5.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.0"
   }
 }

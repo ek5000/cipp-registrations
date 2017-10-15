@@ -6,11 +6,10 @@ const Q = require('q');
 const sheets = google.sheets('v4');
 
 function getAuthorizedJwtClient() {
-    const key = require(path.join(process.env.HOME, 'key.json'));
     const jwtClient = new google.auth.JWT(
-      key.client_email,
+      process.env.GOOGLE_AUTH_CLIENT_EMAIL,
       null,
-      key.private_key,
+      process.env.GOOGLE_AUTH_PRIVATE_KEY.replace(/\\n/g, '\n'),
       ['https://www.googleapis.com/auth/spreadsheets'], // an array of auth scopes
       null
     );
